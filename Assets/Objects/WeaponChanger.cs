@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MyScript : MonoBehaviour
+public class WeaponChanger : MonoBehaviour
 {
-    [SerializeField] private Animator _animator;
     [SerializeField] private GameObject[] _weapons;
 
     private void ChangeWeaponNext(GameObject[] weapons)
@@ -31,29 +30,8 @@ public class MyScript : MonoBehaviour
         weapons[0].SetActive(true);
     }
 
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Alpha1))
-        {
-            _animator.Play("Anim1");
-        }
-        else if (Input.GetKeyUp(KeyCode.Alpha2))
-        {
-            _animator.Play("Anim2");
-        }
-        else if (Input.GetKeyUp(KeyCode.Alpha3))
-        {
-            _animator.Play("Anim3");
-        }
-        else if (Input.GetKeyUp(KeyCode.Alpha4))
-        {
-            _animator.Play("Anim4");
-        }
-        else if (Input.GetKeyUp(KeyCode.Alpha5))
-        {
-            _animator.Play("Anim5");
-        }
-
         var mouseScroll = Input.GetAxis("Mouse ScrollWheel");
 
         if (mouseScroll != 0)
